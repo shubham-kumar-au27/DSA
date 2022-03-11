@@ -32,3 +32,5 @@ def maxSubArraySum(a,size):
 # Driver program to test maxSubArraySum
 a = [-2, -3, 4, -1, -2, 1, 5, -3]
 maxSubArraySum(a,len(a))
+
+#here also same algo is used but here we will also get that from which inx till which idx we found the sum greater..

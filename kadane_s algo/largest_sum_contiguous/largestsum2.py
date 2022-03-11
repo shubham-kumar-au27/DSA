@@ -1,16 +1,19 @@
-def maxSubArraySum(a,size):
-    
-    max_so_far = a[0]
-    max_ending_here = 0
-    
-    for i in range(0, size):
-        max_ending_here = max_ending_here + a[i]
-        if max_ending_here < 0:
-            max_ending_here = 0
+def maxSubArraySum(a): 
+    ans = a[0]
+    cur = 0
+    for i in range(len(a)):
+        cur = cur + a[i]
+        if cur < 0 :
+            cur = 0
+
+        elif ans < cur:
+            ans = cur
+
+    return ans
         
-        # Do not compare for all elements. Compare only   
-        # when  max_ending_here > 0
-        elif (max_so_far < max_ending_here):
-            max_so_far = max_ending_here
-            
-    return max_so_far
+    
+a = [-1,-2,-3,-4]
+print ("Maximum contiguous sum is", maxSubArraySum(a))
+
+
+#same algorithm but a bit differnet approach here we are setting ans's value = a[0]. and only updating it when the cur sum value is greater than it.
